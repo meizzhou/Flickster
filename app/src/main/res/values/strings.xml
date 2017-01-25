@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Flickster</string>
+    <color name="purple">#F3E5F5</color>
+    <color name="purple2">#FF5722</color>
+    <color name="purple3">#E64A19</color>
+    <color name="black">#000</color>
 </resources>

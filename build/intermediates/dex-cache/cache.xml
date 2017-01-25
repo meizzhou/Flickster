@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="3e20e226851706f249c68e36f8a55845f17f9f0e">
+        sha1="41e96b2b1130ed9f06754909dd8e9a23bf374dd9">
         <dex dex="/Users/sarahz/Flickster/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_e3eed9070b524927f76d5b14c3a5c427b6ffa969/classes.dex" />
     </item>
     <item
@@ -232,7 +232,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="5fba928859ad855a3d0890d718105ae2cd5fae5a">
+        sha1="fdf0f357295541fa51804a1313b9e916bd620de8">
         <dex dex="/Users/sarahz/Flickster/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d809e598bbc473ca57d5ecb2a45fa767f617e9fa/classes.dex" />
     </item>
     <item
