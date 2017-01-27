@@ -43,7 +43,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.giphy.com/26xBGIZC2vCFguZcQ.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.giphy.com/26gsu5BB6kTZsx28M.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 <img src='http://i.giphy.com/26gs8uiU8lKL00NBC.gif' title='Video Walkthrough2' width='' alt='Video Walkthrough' />
 
 GIF created with [GIPHY].
