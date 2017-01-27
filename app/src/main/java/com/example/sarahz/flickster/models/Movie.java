@@ -8,17 +8,30 @@ import java.util.ArrayList;
 
 /**
  * Created by sarahz on 1/24/17.
+ * this class stores the basic information of each movie
  */
 
 public class Movie {
+    private String backdropPath;
+    private String id;
+    private String originalTitle;
+    private String posterPath;
+    private String overview;
+    private int voteCount;
+    private double voteAverage;
 
-    // poster path is not full url
-    public String getPosterPath() {
-        return String.format("https://image.tmdb.org/t/p/w342/%s", posterPath);
+    public Movie(JSONObject jsonObject) throws JSONException {
+        this.backdropPath = jsonObject.getString("backdrop_path");
+        this.id = jsonObject.getString("id");
+        this.originalTitle = jsonObject.getString("original_title");
+        this.overview = jsonObject.getString("overview");
+        this.posterPath = jsonObject.getString("poster_path");
+        this.voteAverage = jsonObject.getDouble("vote_average");
+        this.voteCount = jsonObject.getInt("vote_count");
     }
 
-    public String getBackdrop() {
-        return String.format("https://image.tmdb.org/t/p/w780/%s", backdropPath);
+    public String getId() {
+        return id;
     }
 
     public String getOriginalTitle() {
@@ -29,18 +42,24 @@ public class Movie {
         return overview;
     }
 
-    String posterPath;
-    String originalTitle;
-    String overview;
-    String backdropPath;
-
-    public Movie(JSONObject jsonObject) throws JSONException {
-        this.posterPath = jsonObject.getString("poster_path");
-        this.originalTitle = jsonObject.getString("original_title");
-        this.overview = jsonObject.getString("overview");
-        this.backdropPath = jsonObject.getString("backdrop_path");
+    // poster path is not full url
+    public String getPosterPath() {
+        return String.format("https://image.tmdb.org/t/p/w342/%s", posterPath);
     }
 
+    public String getBackdrop() {
+        return String.format("https://image.tmdb.org/t/p/w780/%s", backdropPath);
+    }
+
+    public double getVoteAverage() {
+        return voteAverage;
+    }
+
+    public int getVoteCount() {
+        return voteCount;
+    }
+
+    // puts JSONArray item to list
     public static ArrayList<Movie> fromJsonArray(JSONArray array) {
         ArrayList<Movie> results = new ArrayList<Movie>();
 

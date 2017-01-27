@@ -1,9 +1,12 @@
 package com.example.sarahz.flickster;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.sarahz.flickster.adapters.MovieArrayAdapter;
@@ -21,9 +24,9 @@ import cz.msebera.android.httpclient.Header;
 
 public class MovieActivity extends AppCompatActivity {
 
-    ArrayList<Movie> movies;
-    MovieArrayAdapter movieAdapter;
-    ListView lvitems;
+    private ArrayList<Movie> movies;
+    private MovieArrayAdapter movieAdapter;
+    private ListView lvitems;
     private SwipeRefreshLayout swipeContainer;
     private final String URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
 
@@ -76,6 +79,28 @@ public class MovieActivity extends AppCompatActivity {
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
+
+        setupListViewListener();
+    }
+
+    public void setupListViewListener(){
+        lvitems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Movie selectedMovie = movies.get(position);
+
+                Intent intent = new Intent(MovieActivity.this, detailActivity.class);
+                intent.putExtra("id", selectedMovie.getId());
+                intent.putExtra("posterPath", selectedMovie.getPosterPath());
+                intent.putExtra("title",selectedMovie.getOriginalTitle());
+                intent.putExtra("voteAverage", selectedMovie.getVoteAverage());
+                intent.putExtra("voteCount", selectedMovie.getVoteCount());
+                intent.putExtra("overview", selectedMovie.getOverview());
+
+                startActivity(intent);
+
+            }
+        });
     }
 
     public void fetchTimelineAsync(int page) {
